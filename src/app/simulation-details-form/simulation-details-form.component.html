@@ -1,0 +1,150 @@
+<div class="container mx-auto px-4">
+  <form
+    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+    (ngSubmit)="onSubmit()"
+  >
+    <h3
+      class="form-title mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-black"
+    >
+      {{ formTitle }}
+    </h3>
+    <div class="mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="name"
+        >Name:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="text"
+        id="name"
+        [(ngModel)]="name"
+        name="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="populationSize"
+        >Population size:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="populationSize"
+        [(ngModel)]="populationSize"
+        name="Population size"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="infected"
+        >Infected:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="infected"
+        [(ngModel)]="infected"
+        name="infected"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="spreadRatio"
+        >Spread ratio:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="spreadRatio"
+        [(ngModel)]="spreadRatio"
+        name="Spread ratio"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="deathRatio"
+        >Death ratio:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="deathRatio"
+        [(ngModel)]="deathRatio"
+        name="Death ratio"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="recoveryTime"
+        >Recovery time:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="recoveryTime"
+        [(ngModel)]="recoveryTime"
+        name="Recovery time"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="deathTime"
+        >Death time:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="deathTime"
+        [(ngModel)]="deathTime"
+        name="Death time"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label
+        class="block text-gray-700 text-sm font-bold mb-2"
+        for="simulationTime"
+        >Simulation time:</label
+      >
+      <input
+        [readOnly]="isEditable"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        type="number"
+        id="simulationTime"
+        [(ngModel)]="simulationTime"
+        name="Simulation time"
+        required
+      />
+    </div>
+    <button
+      class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      (click)="switchEditable()"
+      (click)="showSaveButton()"
+    >
+      EDIT
+    </button>
+     <button
+      class="save-button focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+      type="submit"
+      (click)="switchEditable()"
+      (click)="showSaveButton()"
+      (click)="saveSimulation()"
+      (click) = "updatePopulationCards()"
+      [hidden]="isSaveButtonHidden"
+    >
+      SAVE
+    </button>
+  </form>
+</div>
