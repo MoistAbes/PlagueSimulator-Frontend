@@ -1,5 +1,18 @@
 # PlagueSimulationFrontEnd
 
+funkcjonalności
+- tabela pokazująca wszystko symulacjie
+- wyszukiwanie po nazwie symulacji
+- możliwość stworzenia nowej symulacji
+- możliwość usunięcia symulacji
+- możliwość edycji symulacji
+- możliwość kliknięcia na daną symulacje w celu wygenerowania populacji
+
+  błędy
+  - w celu poprawnego wygenerowania populacji dla symulacji wymagane jest wczesniejsze wygenerowanie pierwszej populacji (można to zrobić przy użyciu np. postmana lub przyciku generate first population jednak będzie trzeba zmienic widok żeby dane się wczytały)
+  - edycja parametrów symulacji nie rozpoczyna generowania nowych populacji
+  - tabela potrafi wyświetlać niepoprawne dane przy zmianie stron
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
 ## Development server
